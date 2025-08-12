@@ -4,11 +4,11 @@ export default function Footer() {
       <div className="container py-10 text-gray-400 text-sm">
         <div className="grid-two">
           <div>
-            <div className="text-white font-semibold mb-2">Printkracht</div>
+            <div className="text-white font-semibold mb-2">WrapStudio</div>
             <p>Carwrapping & belettering met AI-versneld design. Sneller concept, strakke afwerking.</p>
           </div>
           <div className="text-right">
-            <p>© {new Date().getFullYear()} Printkracht. Alle rechten voorbehouden.</p>
+            <p>© {new Date().getFullYear()} WrapStudio. Alle rechten voorbehouden.</p>
           </div>
         </div>
       </div>

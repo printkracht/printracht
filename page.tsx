@@ -1,28 +1,16 @@
 import Link from "next/link";
-import { motion } from "framer-motion";
-import { useI18n } from "@/lib/i18n";
 
 export default function Home() {
-  const { t } = useI18n();
-  const badges = t('badges').split(';').map(s=>s.trim());
   return (
     <div className="py-12 space-y-12">
       <section className="text-center space-y-6">
-        <motion.h1 initial={{opacity:0, y:10}} animate={{opacity:1, y:0}} transition={{duration:0.5}}>
-          {t("heroTitle")} <span className="block text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-500">{t("brandTagline")}</span>
-        </motion.h1>
-        <motion.p className="text-gray-300" initial={{opacity:0}} animate={{opacity:1}} transition={{delay:0.15}}>
-          {t("heroSub")}
-        </motion.p>
-        <motion.div className="flex gap-3 justify-center" initial={{opacity:0}} animate={{opacity:1}} transition={{delay:0.25}}>
-          <Link href="/wrap-calculator" className="btn btn-primary">{t("ctaBook")}</Link>
-          <a href="#pakketten" className="btn btn-ghost">{t("ctaViewPackages")}</a>
-        </motion.div>
-        <motion.div className="flex flex-wrap justify-center gap-2" initial={{opacity:0}} animate={{opacity:1}} transition={{delay:0.35}}>
-          {badges.map((b, i)=>(
-            <span key={i} className="text-xs bg-white/5 border border-white/10 rounded-full px-3 py-1 text-gray-300">{b}</span>
-          ))}
-        </motion.div>
+        <h1>Val op met een wrap die verkoopt. Supersnel ontworpen met AI, perfect afgewerkt door ons.</h1>
+        <p className="text-gray-300">Binnen <strong>24 uur</strong> je eerste designconcept. Keuze uit 3 pakketten. Print & montage inhouse.</p>
+        <div className="flex gap-3 justify-center">
+          <Link href="/wrap-calculator" className="btn btn-primary">Boek intake (€49 – verrekend)</Link>
+          <a href="#pakketten" className="btn btn-ghost">Bekijk pakketten</a>
+        </div>
+        <div className="text-sm text-gray-400">★★★★★ Klanttevredenheid • Premium folies • Bancontact/kaart • Factuur met btw</div>
       </section>
 
       <section className="grid grid-cols-1 md:grid-cols-3 gap-4" id="pakketten">
@@ -44,21 +32,21 @@ export default function Home() {
       </section>
 
       <section className="card">
-        <h3>{t('designPackTitle')}</h3>
-        <p className="text-gray-300">{t("designPackBody")}</p>
+        <h3>Ontwerppakket – € 245 excl. btw</h3>
+        <p className="text-gray-300">Inclusief <b>3 verschillende ontwerpen</b> en <b>3 aanpassingsrondes</b>. Perfect om snel tot een sterk, printklaar resultaat te komen.</p>
         <div className="mt-3 flex gap-3">
-          <a href="/design" className="btn btn-primary">{t("designCTAStart")}</a>
-          <a href="/wrap-calculator" className="btn btn-ghost">{t("designCTACalc")}</a>
+          <a href="/design" className="btn btn-primary">Start ontwerp</a>
+          <a href="/wrap-calculator" className="btn btn-ghost">Bereken wrap</a>
         </div>
       </section>
 
       <section className="grid-two items-center">
         <div className="space-y-3">
-          <h2>{t('howItWorks')}</h2>
+          <h2>Hoe het werkt</h2>
           <ol className="list-decimal list-inside text-gray-300 space-y-2">
-            <li><strong>{t('step1')}</strong> – {t('step1Body')}</li>
-            <li><strong>{t('step2')}</strong> – {t('step2Body')}</li>
-            <li><strong>{t('step3')}</strong> – {t('step3Body')}</li>
+            <li><strong>Intake & metingen</strong> – Doel, stijl, budget. We noteren voertuigdata en wensen.</li>
+            <li><strong>AI-versneld ontwerp</strong> – We genereren routes en werken jouw favoriet uit tot printklaar.</li>
+            <li><strong>Print & montage</strong> – Hoogwaardige folie, nette randen, garantie op hechting en kleur.</li>
           </ol>
         </div>
         <div className="card">
